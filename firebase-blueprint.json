@@ -1,0 +1,33 @@
+{
+  "entities": {
+    "users": {
+      "path": "users/{userId}",
+      "fields": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string", "optional": true },
+        "createdAt": { "type": "timestamp" }
+      },
+      "roles": {
+        "owner": "auth.uid == userId"
+      }
+    },
+    "notes": {
+      "path": "notes/{noteId}",
+      "fields": {
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "summary": { "type": "string", "optional": true },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "isFavorite": { "type": "boolean" },
+        "isDraft": { "type": "boolean", "optional": true },
+        "createdAt": { "type": "timestamp" },
+        "updatedAt": { "type": "timestamp" }
+      },
+      "roles": {
+        "owner": "auth.uid == resource.data.userId"
+      }
+    }
+  }
+}

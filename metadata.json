@@ -1,0 +1,10 @@
+{
+  "name": "COGNINOTE AI",
+  "description": "A minimalist AI-powered digital notebook with voice-to-text, intelligent tag suggestions, summaries, and title generation.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
